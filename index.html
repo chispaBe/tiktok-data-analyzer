@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>App Data Analyzer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>📊 App Data Analyzer</h1>
+
+<input type="file" id="fileInput" />
+<input type="text" id="searchInput" placeholder="Buscar..." />
+<input type="date" id="fromDate">
+<input type="date" id="toDate">
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Tipo</th>
+      <th>App</th>
+      <th>Título</th>
+      <th>Usuario</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<script src="app.js"></script>
+</body>
+</html>
