@@ -1,0 +1,27 @@
+function render() {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = '';
+
+  const q = searchInput.value.toLowerCase();
+  const from = fromDate.value;
+  const to = toDate.value;
+
+  data
+    .filter(d =>
+      (!q || JSON.stringify(d).toLowerCase().includes(q)) &&
+      (!from || d.timestamp >= from) &&
+      (!to || d.timestamp <= to)
+    )
+    .forEach(d => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${d.timestamp}</td>
+        <td>${d.type}</td>
+        <td>${d.app}</td>
+        <td>${d.title || '—'}</td>
+        <td>${d.username || '—'}</td>
+        <td><a href="${d.url}" target="_blank">link</a></td>
+      `;
+      tbody.appendChild(tr);
+    });
+}
